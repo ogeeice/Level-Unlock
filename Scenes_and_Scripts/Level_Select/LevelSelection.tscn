@@ -1,0 +1,146 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Assets/Fonts/homespun.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scenes_and_Scripts/Level_Select/Script/LevelSelection.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=35]
+size = 50
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=36]
+size = 30
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=37]
+bg_color = Color( 0.705882, 0.729412, 0.278431, 1 )
+
+[sub_resource type="StyleBoxFlat" id=38]
+bg_color = Color( 0.294118, 0.231373, 0.611765, 1 )
+
+[sub_resource type="StyleBoxFlat" id=39]
+bg_color = Color( 0.172549, 0.105882, 0.180392, 1 )
+
+[sub_resource type="StyleBoxFlat" id=40]
+bg_color = Color( 0.427451, 0.54902, 0.196078, 1 )
+
+[node name="LevelSelection" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+Level0 = "res://Level/GameLevels/Tutorial.tscn"
+Level1 = "res://Level/GameLevels/Level1.tscn"
+Level2 = "res://Level/GameLevels/Level2.tscn"
+
+[node name="Label" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 0.16
+custom_fonts/font = SubResource( 35 )
+text = "LEVEL SELECTION"
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+uppercase = true
+
+[node name="Box" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ButtonHolder" type="GridContainer" parent="Box"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -275.0
+margin_top = -175.0
+margin_right = 275.0
+margin_bottom = 175.0
+custom_constants/vseparation = 50
+custom_constants/hseparation = 50
+columns = 3
+
+[node name="Level0" type="Button" parent="Box/ButtonHolder" groups=["LEVELS"]]
+margin_right = 150.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 150, 150 )
+custom_fonts/font = SubResource( 36 )
+custom_styles/hover = SubResource( 37 )
+custom_styles/pressed = SubResource( 38 )
+custom_styles/focus = SubResource( 37 )
+custom_styles/disabled = SubResource( 39 )
+custom_styles/normal = SubResource( 40 )
+text = "LEVEL0"
+
+[node name="Level1" type="Button" parent="Box/ButtonHolder" groups=["LEVELS"]]
+margin_left = 200.0
+margin_right = 350.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 150, 150 )
+custom_fonts/font = SubResource( 36 )
+custom_styles/hover = SubResource( 37 )
+custom_styles/pressed = SubResource( 38 )
+custom_styles/focus = SubResource( 37 )
+custom_styles/disabled = SubResource( 39 )
+custom_styles/normal = SubResource( 40 )
+text = "LEVEL1"
+
+[node name="Level2" type="Button" parent="Box/ButtonHolder" groups=["LEVELS"]]
+margin_left = 400.0
+margin_right = 550.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 150, 150 )
+custom_fonts/font = SubResource( 36 )
+custom_styles/hover = SubResource( 37 )
+custom_styles/pressed = SubResource( 38 )
+custom_styles/focus = SubResource( 37 )
+custom_styles/disabled = SubResource( 39 )
+custom_styles/normal = SubResource( 40 )
+text = "LEVEL2"
+
+[node name="Level3" type="Button" parent="Box/ButtonHolder" groups=["LEVELS"]]
+margin_top = 200.0
+margin_right = 150.0
+margin_bottom = 350.0
+rect_min_size = Vector2( 150, 150 )
+custom_fonts/font = SubResource( 36 )
+custom_styles/hover = SubResource( 37 )
+custom_styles/pressed = SubResource( 38 )
+custom_styles/focus = SubResource( 37 )
+custom_styles/disabled = SubResource( 39 )
+custom_styles/normal = SubResource( 40 )
+text = "LEVEL3"
+
+[node name="Level4" type="Button" parent="Box/ButtonHolder" groups=["LEVELS"]]
+margin_left = 200.0
+margin_top = 200.0
+margin_right = 350.0
+margin_bottom = 350.0
+rect_min_size = Vector2( 150, 150 )
+custom_fonts/font = SubResource( 36 )
+custom_styles/hover = SubResource( 37 )
+custom_styles/pressed = SubResource( 38 )
+custom_styles/focus = SubResource( 37 )
+custom_styles/disabled = SubResource( 39 )
+custom_styles/normal = SubResource( 40 )
+text = "LEVEL4"
+
+[node name="Level5" type="Button" parent="Box/ButtonHolder" groups=["LEVELS"]]
+margin_left = 400.0
+margin_top = 200.0
+margin_right = 550.0
+margin_bottom = 350.0
+rect_min_size = Vector2( 150, 150 )
+custom_fonts/font = SubResource( 36 )
+custom_styles/hover = SubResource( 37 )
+custom_styles/pressed = SubResource( 38 )
+custom_styles/focus = SubResource( 37 )
+custom_styles/disabled = SubResource( 39 )
+custom_styles/normal = SubResource( 40 )
+text = "LEVEL5"
+
+[connection signal="pressed" from="Box/ButtonHolder/Level0" to="." method="_on_Level0_pressed"]
+[connection signal="pressed" from="Box/ButtonHolder/Level1" to="." method="_on_Level1_pressed"]
+[connection signal="pressed" from="Box/ButtonHolder/Level2" to="." method="_on_Level2_pressed"]
